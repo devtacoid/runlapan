@@ -433,13 +433,13 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
       <table class="datatables-demo table table-striped table-bordered" id="xin_table">
         <thead>
           <tr>
-            <th style="width:60px;"><?php echo $this->lang->line('xin_action');?></th>
             <th><?php echo $this->lang->line('xin_employees_id');?></th>
             <th width="200"><i class="fa fa-user"></i> <?php echo $this->lang->line('xin_employees_full_name');?></th>
             <th><?php echo $this->lang->line('left_company');?></th>
             <th><?php echo $this->lang->line('dashboard_contact');?></th>
             <th><?php echo $this->lang->line('xin_reports_to');?></th>
             <th><?php echo $this->lang->line('xin_employee_role');?></th>
+            <th style="width:60px;"><?php echo $this->lang->line('xin_action');?></th>
           </tr>
         </thead>
       </table>
@@ -484,13 +484,13 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                 <table class="datatables-demo table table-striped table-bordered" id="xin_table">
                   <thead>
                     <tr>
-                      <th style="width:60px;"><?php echo $this->lang->line('xin_action');?></th>
                       <th><?php echo $this->lang->line('xin_employees_id');?></th>
                       <th width="200"><i class="fa fa-user"></i> <?php echo $this->lang->line('xin_employees_full_name');?></th>
                       <th><?php echo $this->lang->line('left_company');?></th>
                       <th><?php echo $this->lang->line('dashboard_contact');?></th>
                       <th><?php echo $this->lang->line('xin_reports_to');?></th>
                       <th><?php echo $this->lang->line('xin_employee_role');?></th>
+                      <th style="width:60px;"><?php echo $this->lang->line('xin_action');?></th>
                     </tr>
                   </thead>
                 </table>
@@ -514,13 +514,13 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
               <table class="datatables-demo table table-striped table-bordered" id="xin_my_team_table" style="width:100%;">
                 <thead>
                   <tr>
-                    <th style="width:60px;"><?php echo $this->lang->line('xin_action');?></th>
                     <th><?php echo $this->lang->line('xin_employees_id');?></th>
                     <th width="200"><i class="fa fa-user"></i> <?php echo $this->lang->line('xin_employees_full_name');?></th>
                     <th><?php echo $this->lang->line('left_company');?></th>
                     <th><?php echo $this->lang->line('dashboard_contact');?></th>
                     <th><?php echo $this->lang->line('xin_reports_to');?></th>
                     <th><?php echo $this->lang->line('xin_employee_role');?></th>
+                    <th style="width:60px;"><?php echo $this->lang->line('xin_action');?></th>
                   </tr>
                 </thead>
               </table>

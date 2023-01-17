@@ -6,7 +6,10 @@
      public function __construct()
     {
         parent::__construct();
+
         $this->load->database();
+        $this->load->library('encryption');
+        $this->encryption;
     }
 
 	// get setting info
@@ -74,7 +77,7 @@
 		$sql = 'SELECT * FROM xin_users WHERE email = ? and is_active = ?';
 		$binds = array($data['email'],1);
 		$query = $this->db->query($sql, $binds);
-	
+
 		$options = array('cost' => 12);
 		$password_hash = password_hash($data['password'], PASSWORD_BCRYPT, $options);
 		if ($query->num_rows() > 0) {

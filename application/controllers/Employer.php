@@ -165,8 +165,9 @@ class Employer extends MY_Controller {
 			'email' => $email,
 			'password' => $password
 			);
-		$result = $this->Login_model->frontend_user_login($data);	
-		
+
+		$result = $this->Login_model->frontend_user_login($data);
+
 		if ($result == TRUE) {
 			
 			$result = $this->Login_model->read_frontend_user_info_session($email);

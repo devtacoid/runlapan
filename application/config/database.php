@@ -74,15 +74,17 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'mysql:host=localhost:9713;dbname=hrsaleprem',
-	'hostname' => "localhost",
-	'username' => "devops",
-	'password' => "@Run8_2021",
-	'database' => "hrsaleprem",
+	'dsn'	=> 'mysql:host=127.0.0.1:8889;dbname=run8_local',
+	'hostname' => "",
+    'port' => 8889,
+	'username' => "root",
+	'password' => "root",
+	'database' => "",
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
+//	'db_debug' => (ENVIRONMENT !== 'production'),
+	'db_debug' => TRUE,
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
