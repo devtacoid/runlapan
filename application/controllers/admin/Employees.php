@@ -343,14 +343,14 @@ class Employees extends MY_Controller {
 			
 			
 			if($r->profile_picture!='' && $r->profile_picture!='no file') {
-				$ol = '<a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32"><img src="'.base_url().'uploads/profile/'.$r->profile_picture.'" class="d-block ui-w-30 rounded-circle" alt=""></span></a>';
+				$ol = '<a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32"><img src="'.base_url().'uploads/profile/'.$r->profile_picture.'" class="d-block ui-w-30" alt=""></span></a><br>'.$r->employee_id;
 			} else {
 				if($r->gender=='Male') { 
 					$de_file = base_url().'uploads/profile/default_male.jpg';
 				 } else {
 					$de_file = base_url().'uploads/profile/default_female.jpg';
 				 }
-				$ol = '<a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32"><img src="'.$de_file.'" class="d-block ui-w-30 rounded-circle" alt=""></span></a>';
+				$ol = '<a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32"><img src="'.$de_file.'" class="d-block ui-w-30" alt=""></span></a><br>'.$r->employee_id;
 			}
 			//shift info
 			$office_shift = $this->Timesheet_model->read_office_shift_information($r->office_shift_id);
@@ -402,7 +402,6 @@ class Employees extends MY_Controller {
 			
 			$comp_name = '<div class="media align-items-center">
 				<div class="media-body flex-truncate">
-				  '.$comp_name.'
 				  <div class="text-muted small text-truncate">'.$this->lang->line('xin_location').': '.$location_name.'</div>
 				  <div class="text-muted small text-truncate">'.$this->lang->line('left_department').': '.$department_name.'</div>
 				  <div class="text-muted small text-truncate">'.$this->lang->line('left_designation').': '.$designation_name.'</div>
@@ -416,13 +415,13 @@ class Employees extends MY_Controller {
 			
 			$role_status = $role_name.'<br><div class="btn-group" data-toggle="tooltip" data-state="primary" data-placement="top" title="'.$this->lang->line('xin_change_status').'"><button type="button" class="btn btn-sm md-btn-flat dropdown-toggle '.$status_btn.'" data-toggle="dropdown">'.$status_title.'</button><div class="dropdown-menu"><a class="dropdown-item statusinfo" href="javascript:void(0)" data-status="1" data-user-id="'.$r->user_id.'">'.$this->lang->line('xin_employees_active').'</a><a class="dropdown-item statusinfo" href="javascript:void(0)" data-status="2" data-user-id="'.$r->user_id.'">'.$this->lang->line('xin_employees_inactive').'</a></div></div>';
 			$data[] = array(
-				$function,
-				$r->employee_id,
+//				$r->employee_id,
 				$employee_name,
 				$comp_name,
 				$contact_info,
 				$manager_name,
 				$role_status,
+				$function,
 			);
       
 	  }

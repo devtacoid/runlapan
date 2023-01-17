@@ -23,16 +23,16 @@
 <body>
 <!-- Page loader start -->
 <div class="page-loader"></div>
-<!-- Page loader end --> 
+<!-- Page loader end -->
 <!-- Header start -->
-<header class="main-header"> 
+<header class="main-header">
   <!-- Navbar start -->
   <nav class="navbar">
-    <div class="container"> 
-      <!-- Logo start --> 
+    <div class="container">
+      <!-- Logo start -->
       <a href="<?php echo site_url('frontend/jobs');?>" class="navbar-brand">
-      <img src="<?php echo base_url();?>uploads/logo/job/<?php echo $system[0]->job_logo;?>"></a> 
-      <!-- Logo end --> 
+      <img src="<?php echo base_url();?>uploads/logo/job/<?php echo $system[0]->job_logo;?>"></a>
+      <!-- Logo end -->
       <!-- Navs start -->
       <div class="navs">
         <ul class="nav navbar-nav account">
@@ -55,17 +55,17 @@
           <li> <a href="<?php echo site_url('frontend/jobs');?>"><?php echo $this->lang->line('xin_jobs_list');?></a> </li>
 		  <?php endif;?>
         </ul>
-        <!-- Main nav end --> 
+        <!-- Main nav end -->
       </div>
-      <!-- Navs end --> 
+      <!-- Navs end -->
       <!-- Responsive nav button start -->
       <ul class="nav navbar-nav responsive-btn">
         <li><a href="#"><i class="md-menu m-r-10"></i></a></li>
       </ul>
-      <!-- Responsive nav button end --> 
+      <!-- Responsive nav button end -->
     </div>
   </nav>
-  <!-- Navbar end --> 
+  <!-- Navbar end -->
 </header>
 <!-- Header end -->
 <section class="page-header lighten-4" style="background: url(<?php echo base_url();?>skin/vendor/jobs/assets/images/cover-2.jpg)">
@@ -89,7 +89,7 @@
                     if(!is_null($jtype)){
                         $jt_type = $jtype[0]->type;
                     } else {
-                        $jt_type = '--';	
+                        $jt_type = '--';
                     }
                   ?>
         <?php $job_designation = $this->Designation_model->read_designation_information($job->designation_id);?>
@@ -97,7 +97,7 @@
                     if(!is_null($job_designation)){
                         $designation_name = $job_designation[0]->designation_name;
                     } else {
-                        $designation_name = '--';	
+                        $designation_name = '--';
                     }
                   ?>
         <?php $department = $this->Department_model->read_department_information($job_designation[0]->department_id);?>
@@ -105,7 +105,7 @@
                     if(!is_null($department)){
                         $department_name = $department[0]->department_name;
                     } else {
-                        $department_name = '--';	
+                        $department_name = '--';
                     }
                   ?>
         <div class="item-jobpost">
@@ -142,27 +142,27 @@
     </div>
   </div>
 </footer>
-<!-- Footer end --> 
-<!-- ================= Script files ================= --> 
-<!-- Jquery --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/jquery/jquery.min.js"></script> 
-<!-- Jquery ui --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/jquery/jquery-ui.min.js"></script> 
-<!-- Bootstrap --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/bootstrap/bootstrap.min.js"></script> 
-<!-- Bootstrap slider --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/bootstrap-slider/bootstrap-slider.min.js"></script> 
-<!-- Waves effect --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/waves/waves.min.js"></script> 
-<!-- Scroll animate effect --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/scroll.js"></script> 
-<!-- Owl carousel --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/owl-carousel/owl.carousel.min.js"></script> 
-<!-- Summernote editor --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/summernote/summernote.min.js"></script> 
-<!-- Typed.js --> 
-<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/typed.min.js"></script> 
-<!-- Custom --> 
+<!-- Footer end -->
+<!-- ================= Script files ================= -->
+<!-- Jquery -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/jquery/jquery.min.js"></script>
+<!-- Jquery ui -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/jquery/jquery-ui.min.js"></script>
+<!-- Bootstrap -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/bootstrap/bootstrap.min.js"></script>
+<!-- Bootstrap slider -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/bootstrap-slider/bootstrap-slider.min.js"></script>
+<!-- Waves effect -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/waves/waves.min.js"></script>
+<!-- Scroll animate effect -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/scroll.js"></script>
+<!-- Owl carousel -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/owl-carousel/owl.carousel.min.js"></script>
+<!-- Summernote editor -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/summernote/summernote.min.js"></script>
+<!-- Typed.js -->
+<script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/typed.min.js"></script>
+<!-- Custom -->
 <script src="<?php echo base_url();?>skin/vendor/jobs/assets/js/app.js"></script>
 </body>
 </html>

@@ -40,7 +40,7 @@
 
 		<!-- Logo -->
 		<div id="logo">
-			<h1><a href="<?php echo site_url('');?>"><img src="<?php echo base_url();?>uploads/logo/job/<?php echo $system[0]->job_logo;?>" alt="<?php echo $title;?>" /></a></h1>
+			<h1><a href="<?php echo site_url('');?>"><img src="<?php echo base_url();?>uploads/logo/job/<?php echo $system[0]->job_logo;?>" alt="<?php echo $title;?>" style="max-height:42px; width:auto"/></a></h1>
 		</div>
 
 		<!-- Menu -->

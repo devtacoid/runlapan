@@ -109,7 +109,7 @@ endif;
             <!-- Logo -->
             <div class="d-flex justify-content-center align-items-center">
             <div class="position-relative">
-                <div class="p-1"><img src="<?php echo base_url();?>uploads/logo/signin/<?php echo $company[0]->sign_in_logo;?>" alt="hrsale logo"></div>
+                <div class="p-1"><img src="<?php echo base_url();?>uploads/logo/signin/<?php echo $company[0]->sign_in_logo;?>" alt="hrsale logo" style="max-height:150px; width:auto"></div>
               </div>
           </div>
             <!-- / Logo -->
