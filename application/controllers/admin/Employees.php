@@ -343,14 +343,18 @@ class Employees extends MY_Controller {
 			
 			
 			if($r->profile_picture!='' && $r->profile_picture!='no file') {
-				$ol = '<a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32"><img src="'.base_url().'uploads/profile/'.$r->profile_picture.'" class="d-block ui-w-30" alt=""></span></a><br>'.$r->employee_id;
+				$ol = '<div style="display:block; text-align:center"><a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32">
+				        <img src="'.base_url().'uploads/profile/'.$r->profile_picture.'" class="d-block ui-w-30" alt="" style="width:70px !important">
+				        </span></a><br><div>'.$r->employee_id.'</div></div>';
 			} else {
 				if($r->gender=='Male') { 
 					$de_file = base_url().'uploads/profile/default_male.jpg';
 				 } else {
 					$de_file = base_url().'uploads/profile/default_female.jpg';
 				 }
-				$ol = '<a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32"><img src="'.$de_file.'" class="d-block ui-w-30" alt=""></span></a><br>'.$r->employee_id;
+				$ol = '<div style="display:block; text-align:center"><a href="'.site_url().'admin/employees/detail/'.$r->user_id.'"><span class="avatar box-32">
+                        <img src="'.$de_file.'" class="d-block ui-w-30" alt="" style="width:70px !important">
+                        </span></a><br><div>'.$r->employee_id.'</div></div>';
 			}
 			//shift info
 			$office_shift = $this->Timesheet_model->read_office_shift_information($r->office_shift_id);
@@ -414,6 +418,8 @@ class Employees extends MY_Controller {
 			elseif($r->is_active==1): $status_btn = 'btn-success'; $status_title = $this->lang->line('xin_employees_active'); endif;
 			
 			$role_status = $role_name.'<br><div class="btn-group" data-toggle="tooltip" data-state="primary" data-placement="top" title="'.$this->lang->line('xin_change_status').'"><button type="button" class="btn btn-sm md-btn-flat dropdown-toggle '.$status_btn.'" data-toggle="dropdown">'.$status_title.'</button><div class="dropdown-menu"><a class="dropdown-item statusinfo" href="javascript:void(0)" data-status="1" data-user-id="'.$r->user_id.'">'.$this->lang->line('xin_employees_active').'</a><a class="dropdown-item statusinfo" href="javascript:void(0)" data-status="2" data-user-id="'.$r->user_id.'">'.$this->lang->line('xin_employees_inactive').'</a></div></div>';
+
+            $manager_name = '<br><button type="button" class="btn btn-sm md-btn-flat btn-default">Lihat Akses</button>';
 			$data[] = array(
 //				$r->employee_id,
 				$employee_name,
@@ -2235,7 +2241,7 @@ class Employees extends MY_Controller {
     	}
 		
 		$module_attributes = $this->Custom_fields_model->all_hrsale_module_attributes();
-		$count_module_attributes = $this->Custom_fields_model->count_module_attributes();	
+		$count_module_attributes = $this->Custom_fields_model->count_module_attributes();
 		$i=1;
 		if($count_module_attributes > 0){
 			 foreach($module_attributes as $mattribute) {
@@ -2245,10 +2251,10 @@ class Employees extends MY_Controller {
 						$Return['error'] = $this->lang->line('xin_hrsale_custom_field_the').' '.$mattribute->attribute_label.' '.$this->lang->line('xin_hrsale_custom_field_is_required');
 					}
 				 }
-			 }		
+			 }
 			 if($Return['error']!=''){
 				$this->output($Return);
-			}	
+			}
 		}
 		
 		$first_name = $this->Xin_model->clean_post($this->input->post('first_name'));
