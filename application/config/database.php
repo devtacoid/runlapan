@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> 'mysql:host=127.0.0.1:8889;dbname=run8_local',
-	'hostname' => "",
+	'hostname' => "127.0.0.1",
     'port' => 8889,
 	'username' => "root",
 	'password' => "root",
-	'database' => "",
+	'database' => "run8_local",
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -135,7 +135,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                         <div class="form-group">
                                             <label for="employee_id"><?php echo $this->lang->line('dashboard_employee_id'); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="<?php echo $this->lang->line('dashboard_employee_id'); ?>"
                                                    name="employee_id" type="text" value="<?php echo $employee_id; ?>">
                                         </div>
@@ -147,7 +147,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
                                             <input class="form-control date" readonly
                                                    placeholder="<?php echo $this->lang->line('xin_employee_doj'); ?>"
-                                                   name="date_of_joining" type="text"
+                                                   name="date_of_joining" type="text" autocomplete="on"
                                                    value="<?php echo date('Y-m-d'); ?>">
                                         </div>
                                     </div>
@@ -194,18 +194,18 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="work_start_date">Tanggal Mulai Kerja <i
+                                            <label for="date_of_working">Tanggal Mulai Kerja <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control date" readonly id="work_start_date"
-                                                   placeholder="Tanggal Mulai Kerja"
-                                                   name="work_start_date" type="text" value="<?php echo date('Y-m-d'); ?>">
+                                            <input class="form-control date" readonly id="date_of_working"
+                                                   placeholder="Tanggal Mulai Kerja" autocomplete="on"
+                                                   name="date_of_working" type="text" value="<?php echo date('Y-m-d'); ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="date_of_joining" class="control-label">Status Karyawan <i
+                                            <label for="e_status" class="control-label">Status Karyawan <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <select class="form-control" name="gender" data-plugin="select_hrm"
+                                            <select class="form-control" name="e_status" data-plugin="select_hrm" id="e_status" autocomplete="on"
                                                     data-placeholder="<?php echo $this->lang->line('xin_employee_gender'); ?>">
                                                 <option value="contract">Kontrak</option>
                                                 <option value="permanent">Tetap</option>
@@ -219,7 +219,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                         <div class="form-group">
                                             <label for="designation">Level <i class="hrsale-asterisk">*</i></label>
                                             <select class="form-control" name="designation_id" data-plugin="select_hrm"
-                                                    disabled="disabled"
+                                                    disabled="disabled" autocomplete="on"
                                                     data-placeholder="<?php echo $this->lang->line('xin_designation'); ?>">
                                                 <option value=""><?php echo $this->lang->line('xin_designation'); ?></option>
                                             </select>
@@ -237,10 +237,10 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="address">Alamat Lengkap <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control" id="address"
-                                                   placeholder="Alamat Lengkap"
-                                                   name="address" type="text" value="">
+                                            <label for="office_address">Alamat Lengkap <i class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" id="office_address"
+                                                   placeholder="Alamat Lengkap" autocomplete="on"
+                                                   name="office_address" type="text" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -251,19 +251,19 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="province">Provinsi <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control" id="province"
-                                                   placeholder="Provinsi"
-                                                   name="province" type="text" value="">
+                                            <label for="office_province">Provinsi <i class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" id="office_province"
+                                                   placeholder="Provinsi" autocomplete="on"
+                                                   name="office_province" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="city" class="control-label">Kota Madya <i
+                                            <label for="office_city" class="control-label">Kota Madya <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control" id="city"
-                                                   placeholder="Kota Madya"
-                                                   name="city" type="text" value="">
+                                            <input class="form-control" id="office_city"
+                                                   placeholder="Kota Madya" autocomplete="on"
+                                                   name="office_city" type="text" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -272,19 +272,19 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="district" class="control-label">Kecamatan <i
+                                            <label for="office_district" class="control-label">Kecamatan <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control" id="district"
-                                                   placeholder="Kecamatan"
-                                                   name="district" type="text" value="">
+                                            <input class="form-control" id="office_district"
+                                                   placeholder="Kecamatan" autocomplete="on"
+                                                   name="office_district" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="subdistrict">Kelurahan <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="Kelurahan" id="subdistrict"
-                                                   name="subdistrict" type="text" value="">
+                                            <label for="office_subdistrict">Kelurahan <i class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" autocomplete="on"
+                                                   placeholder="Kelurahan" id="office_subdistrict"
+                                                   name="office_subdistrict" type="text" value="">
                                         </div>
                                     </div>
 
@@ -300,17 +300,17 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="first_name">Upload Foto <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="Upload Foto"
-                                                   name="first_name" type="file" value="">
+                                            <label for="profile_picture">Upload Foto <i class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" id="profile_picture"
+                                                   placeholder="Upload Foto" autocomplete="on"
+                                                   name="profile_picture" type="file" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="nik" class="control-label">NIK KTP <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="NIK KTP"
                                                    name="nik" type="text" value="">
                                         </div>
@@ -321,21 +321,20 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="first_name"><?php echo $this->lang->line('xin_employee_first_name'); ?>
-                                                <i class="hrsale-asterisk">*</i></label>
+                                            <label for="fullname">Fullname <i class="hrsale-asterisk">*</i></label>
                                             <input class="form-control"
-                                                   placeholder="<?php echo $this->lang->line('xin_employee_first_name'); ?>"
-                                                   name="first_name" type="text" value="">
+                                                   placeholder="Fullname" autocomplete="on"
+                                                   name="fullname" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="last_name"
-                                                   class="control-label"><?php echo $this->lang->line('xin_employee_last_name'); ?>
-                                                <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="<?php echo $this->lang->line('xin_employee_last_name'); ?>"
-                                                   name="last_name" type="text" value="">
+                                            <label for="gender" class="control-label"><?php echo $this->lang->line('xin_employee_gender'); ?></label>
+                                            <select class="form-control" name="gender" data-plugin="select_hrm" autocomplete="on"
+                                                    data-placeholder="<?php echo $this->lang->line('xin_employee_gender'); ?>">
+                                                <option value="Male"><?php echo $this->lang->line('xin_gender_male'); ?></option>
+                                                <option value="Female"><?php echo $this->lang->line('xin_gender_female'); ?></option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -348,7 +347,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                         <div class="form-group">
                                             <label for="date_of_birth"><?php echo $this->lang->line('xin_employee_dob'); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control date" readonly
+                                            <input class="form-control date" readonly autocomplete="on"
                                                    placeholder="<?php echo $this->lang->line('xin_employee_dob'); ?>"
                                                    name="date_of_birth" type="text" value="">
                                         </div>
@@ -356,7 +355,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="age" class="control-label">Umur <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="Umur" id="age"
                                                    name="age" type="text" value="">
                                         </div>
@@ -367,19 +366,19 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="gender" class="control-label"><?php echo $this->lang->line('xin_employee_gender'); ?></label>
-                                            <select class="form-control" name="gender" data-plugin="select_hrm"
-                                                    data-placeholder="<?php echo $this->lang->line('xin_employee_gender'); ?>">
-                                                <option value="Male"><?php echo $this->lang->line('xin_gender_male'); ?></option>
-                                                <option value="Female"><?php echo $this->lang->line('xin_gender_female'); ?></option>
-                                            </select>
+                                            <label for="contact_no"
+                                                   class="control-label"><?php echo $this->lang->line('xin_contact_number'); ?>
+                                                <i class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" autocomplete="on"
+                                                   placeholder="<?php echo $this->lang->line('xin_contact_number'); ?>"
+                                                   name="contact_no" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="education" class="control-label">Pendidikan Terakhir</label>
                                             <select class="form-control" name="education" data-plugin="select_hrm"
-                                                    data-placeholder="Pendidikan Terakhir">
+                                                    data-placeholder="Pendidikan Terakhir" autocomplete="on">
                                                 <option value="SMA">SMA</option>
                                                 <option value="S1">S1</option>
                                                 <option value="S2">S2</option>
@@ -394,21 +393,20 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="email" class="control-label">Email <i
+                                            <label for="bpjs_tk" class="control-label">BPJS TK <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="Email" id="email"
-                                                   name="email" type="text" value="">
+                                            <input class="form-control" autocomplete="on"
+                                                   placeholder="BPJS TK" id="bpjs_tk"
+                                                   name="bpjs_tk" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="contact_no"
-                                                   class="control-label"><?php echo $this->lang->line('xin_contact_number'); ?>
-                                                <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="<?php echo $this->lang->line('xin_contact_number'); ?>"
-                                                   name="contact_no" type="text" value="">
+                                            <label for="bpjs_kes" class="control-label">BPJS Kesehatan <i
+                                                        class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" autocomplete="on"
+                                                   placeholder="BPJS Kesehatan" id="bpjs_kes"
+                                                   name="bpjs_kes" type="text" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -416,33 +414,9 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="address"><?php echo $this->lang->line('xin_employee_address'); ?></label>
-                                    <input type="text" class="form-control"
+                                    <input type="text" class="form-control" id="address" autocomplete="on"
                                            placeholder="<?php echo $this->lang->line('xin_employee_address'); ?>"
                                            name="address">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="bpjs_tk" class="control-label">BPJS TK <i
-                                                        class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="BPJS TK" id="bpjs_tk"
-                                                   name="bpjs_tk" type="text" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="bpjs_kesehatan" class="control-label">BPJS Kesehatan <i
-                                                        class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
-                                                   placeholder="BPJS Kesehatan" id="bpjs_kesehatan"
-                                                   name="bpjs_kesehatan" type="text" value="">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -455,18 +429,18 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="facebook">Facebook </label>
-                                            <input class="form-control"
-                                                   placeholder="Facebook"
-                                                   name="facebook" type="text" value="">
+                                            <label for="facebook_link">Facebook </label>
+                                            <input class="form-control" id="facebook_link"
+                                                   placeholder="Facebook" autocomplete="on"
+                                                   name="facebook_link" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="instagram">Instagram </label>
-                                            <input class="form-control"
-                                                   placeholder="Instagram"
-                                                   name="instagram" type="text" value="">
+                                            <label for="instagram_link">Instagram </label>
+                                            <input class="form-control" id="instagram_link"
+                                                   placeholder="Instagram" autocomplete="on"
+                                                   name="instagram_link" type="text" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -475,10 +449,10 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="twitter">Twitter </label>
-                                            <input class="form-control"
-                                                   placeholder="Twitter"
-                                                   name="twitter" type="text" value="">
+                                            <label for="twitter_link">Twitter </label>
+                                            <input class="form-control" id="twitter_link"
+                                                   placeholder="Twitter" autocomplete="on"
+                                                   name="twitter_link" type="text" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -493,18 +467,18 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="emergency_name">Nama </label>
-                                            <input class="form-control" id="emergency_name"
-                                                   placeholder="Nama"
-                                                   name="emergency_name" type="text" value="">
+                                            <label for="emergency_contact_name">Nama </label>
+                                            <input class="form-control" id="emergency_contact_name"
+                                                   placeholder="Nama" autocomplete="on"
+                                                   name="emergency_contact_name" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="emergency_phone">No Telepon </label>
-                                            <input class="form-control" id="emergency_phone"
-                                                   placeholder="No Telepon"
-                                                   name="emergency_phone" type="text" value="">
+                                            <label for="emergency_contact_phone">No Telepon </label>
+                                            <input class="form-control" id="emergency_contact_phone"
+                                                   placeholder="No Telepon" autocomplete="on"
+                                                   name="emergency_contact_phone" type="text" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -513,9 +487,9 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="emergency_relationship">Hubungan </label>
-                                            <select class="form-control" name="emergency_relationship" data-plugin="select_hrm"
-                                                    data-placeholder="Hubungan" id="emergency_relationship">
+                                            <label for="emergency_contact_relationship">Hubungan </label>
+                                            <select class="form-control" name="emergency_contact_relationship" data-plugin="select_hrm"
+                                                    data-placeholder="Hubungan" id="emergency_contact_relationship" autocomplete="on">
                                                 <option value="Mama">Mama</option>
                                                 <option value="Bapak">Bapak</option>
                                                 <option value="Kakak">Kakak</option>
@@ -536,7 +510,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                         <div class="form-group">
                                             <label for="username"><?php echo $this->lang->line('dashboard_username'); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="<?php echo $this->lang->line('dashboard_username'); ?>"
                                                    name="username" type="text" value="">
                                         </div>
@@ -546,7 +520,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                             <label for="email"
                                                    class="control-label"><?php echo $this->lang->line('dashboard_email'); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="<?php echo $this->lang->line('dashboard_email'); ?>"
                                                    name="email" type="text" value="">
                                         </div>
@@ -559,7 +533,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                         <div class="form-group">
                                             <label for="xin_employee_password"><?php echo $this->lang->line('xin_employee_password'); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="<?php echo $this->lang->line('xin_employee_password'); ?>"
                                                    name="password" type="text" value="">
                                         </div>
@@ -569,7 +543,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                             <label for="confirm_password"
                                                    class="control-label"><?php echo $this->lang->line('xin_employee_cpassword'); ?>
                                                 <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control"
+                                            <input class="form-control" autocomplete="on"
                                                    placeholder="<?php echo $this->lang->line('xin_employee_cpassword'); ?>"
                                                    name="confirm_password" type="text" value="">
                                         </div>
