@@ -2230,9 +2230,9 @@ class Employees extends MY_Controller
                 $Return['error'] = $this->lang->line('error_company_field');
             } else if ($this->input->post('department_id') === '') {
                 $Return['error'] = $this->lang->line('xin_employee_error_department');
-            } else if($this->input->post('subdepartment_id')==='') {
-        	    $Return['error'] = $this->lang->line('xin_hr_sub_department_field_error');
-		    } else if ($this->input->post('designation_id') === '') {
+            } else if ($this->input->post('subdepartment_id') === '') {
+                $Return['error'] = $this->lang->line('xin_hr_sub_department_field_error');
+            } else if ($this->input->post('designation_id') === '') {
                 $Return['error'] = $this->lang->line('xin_employee_error_designation');
             } else if ($this->input->post('username') === '') {
                 $Return['error'] = $this->lang->line('xin_employee_error_username');
@@ -2261,8 +2261,22 @@ class Employees extends MY_Controller
             } else if ($this->input->post('role') === '') {
                 $Return['error'] = $this->lang->line('xin_employee_error_user_role');
             }
-            if ($Return['error'] != '') {
-                $this->output($Return);
+
+            $file_name = date('Ymdhis');
+            $config['file_name'] = $file_name;
+            $config['upload_path'] = './uploads/profile';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['overwrite'] = true;
+            $config['max_size'] = 1024;
+
+            $this->load->library('upload', $config);
+
+            $profile_picture = null;
+            if (!$this->upload->do_upload('profile_picture')) {
+                $Return['error'] = $this->upload->display_errors();;
+            } else {
+                $uploadData = $this->upload->data();
+                $profile_picture = $uploadData['file_name'];
             }
 
             if ($Return['error'] != '') {
@@ -2297,7 +2311,7 @@ class Employees extends MY_Controller
                 'office_district' => $this->input->post('office_district'),
                 'office_subdistrict' => $this->input->post('office_subdistrict'),
 
-                'profile_picture' => $this->input->post('profile_picture'),
+                'profile_picture' => $profile_picture,
                 'nik' => $this->input->post('nik'),
                 'first_name' => $first_name,
                 'last_name' => $last_name,

@@ -301,7 +301,7 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="profile_picture">Upload Foto <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control" id="profile_picture"
+                                            <input class="form-control" id="profile_picture" accept="image/png, image/jpeg, image/jpg, image/gif"
                                                    placeholder="Upload Foto" autocomplete="on"
                                                    name="profile_picture" type="file" value="">
                                         </div>
