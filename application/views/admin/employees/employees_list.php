@@ -153,6 +153,42 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <?php if ($user_info[0]->user_role_id == 1) { ?>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="first_name"><?php echo $this->lang->line('left_company'); ?>
+                                                    <i class="hrsale-asterisk">*</i></label>
+                                                <select class="form-control" name="company_id" id="aj_company_emp"
+                                                        data-plugin="select_hrm"
+                                                        data-placeholder="<?php echo $this->lang->line('left_company'); ?>">
+                                                    <option value=""><?php echo $this->lang->line('left_company'); ?></option>
+                                                    <?php foreach ($get_all_companies as $company) { ?>
+                                                        <option value="<?php echo $company->company_id ?>"><?php echo $company->name ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    <?php } else { ?>
+                                        <?php $ecompany_id = $user_info[0]->company_id; ?>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="first_name"><?php echo $this->lang->line('left_company'); ?>
+                                                    <i class="hrsale-asterisk">*</i></label>
+                                                <select class="form-control" name="company_id" id="aj_company_emp"
+                                                        data-plugin="select_hrm"
+                                                        data-placeholder="<?php echo $this->lang->line('left_company'); ?>">
+                                                    <option value=""><?php echo $this->lang->line('left_company'); ?></option>
+                                                    <?php foreach ($get_all_companies as $company) { ?>
+                                                        <?php if ($ecompany_id == $company->company_id): ?>
+                                                            <option value="<?php echo $company->company_id ?>"><?php echo $company->name ?></option>
+                                                        <?php endif; ?>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="row">
                                     <?php $colmd = 6;
                                     if ($system[0]->is_active_sub_departments == 'yes') {
                                         $ncolmd = 6;
@@ -198,18 +234,33 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                                         class="hrsale-asterisk">*</i></label>
                                             <input class="form-control date" readonly id="date_of_working"
                                                    placeholder="Tanggal Mulai Kerja" autocomplete="on"
-                                                   name="date_of_working" type="text" value="<?php echo date('Y-m-d'); ?>">
+                                                   name="date_of_working" type="text"
+                                                   value="<?php echo date('Y-m-d'); ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="e_status" class="control-label">Status Karyawan <i
                                                         class="hrsale-asterisk">*</i></label>
-                                            <select class="form-control" name="e_status" data-plugin="select_hrm" id="e_status" autocomplete="on"
+                                            <select class="form-control" name="e_status" data-plugin="select_hrm"
+                                                    id="e_status" autocomplete="on"
                                                     data-placeholder="<?php echo $this->lang->line('xin_employee_gender'); ?>">
                                                 <option value="contract">Kontrak</option>
                                                 <option value="permanent">Tetap</option>
                                                 <option value="intern">Magang/KPL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-md-12" id="location_ajax">
+                                        <div class="form-group">
+                                            <label for="name"><?php echo $this->lang->line('left_location'); ?><i
+                                                        class="hrsale-asterisk">*</i></label>
+                                            <select disabled="disabled" name="location_id" id="location_id"
+                                                    class="form-control" data-plugin="select_hrm"
+                                                    data-placeholder="<?php echo $this->lang->line('left_location'); ?>">
+                                                <option value=""><?php echo $this->lang->line('left_location'); ?></option>
                                             </select>
                                         </div>
                                     </div>
@@ -251,7 +302,8 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="office_province">Provinsi <i class="hrsale-asterisk">*</i></label>
+                                            <label for="office_province">Provinsi <i
+                                                        class="hrsale-asterisk">*</i></label>
                                             <input class="form-control" id="office_province"
                                                    placeholder="Provinsi" autocomplete="on"
                                                    name="office_province" type="text" value="">
@@ -281,7 +333,8 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="office_subdistrict">Kelurahan <i class="hrsale-asterisk">*</i></label>
+                                            <label for="office_subdistrict">Kelurahan <i
+                                                        class="hrsale-asterisk">*</i></label>
                                             <input class="form-control" autocomplete="on"
                                                    placeholder="Kelurahan" id="office_subdistrict"
                                                    name="office_subdistrict" type="text" value="">
@@ -300,8 +353,10 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="profile_picture">Upload Foto <i class="hrsale-asterisk">*</i></label>
-                                            <input class="form-control" id="profile_picture" accept="image/png, image/jpeg, image/jpg, image/gif"
+                                            <label for="profile_picture">Upload Foto <i
+                                                        class="hrsale-asterisk">*</i></label>
+                                            <input class="form-control" id="profile_picture"
+                                                   accept="image/png, image/jpeg, image/jpg, image/gif"
                                                    placeholder="Upload Foto" autocomplete="on"
                                                    name="profile_picture" type="file" value="">
                                         </div>
@@ -329,8 +384,10 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="gender" class="control-label"><?php echo $this->lang->line('xin_employee_gender'); ?></label>
-                                            <select class="form-control" name="gender" data-plugin="select_hrm" autocomplete="on"
+                                            <label for="gender"
+                                                   class="control-label"><?php echo $this->lang->line('xin_employee_gender'); ?></label>
+                                            <select class="form-control" name="gender" data-plugin="select_hrm"
+                                                    autocomplete="on"
                                                     data-placeholder="<?php echo $this->lang->line('xin_employee_gender'); ?>">
                                                 <option value="Male"><?php echo $this->lang->line('xin_gender_male'); ?></option>
                                                 <option value="Female"><?php echo $this->lang->line('xin_gender_female'); ?></option>
@@ -488,8 +545,10 @@ $reports_to = get_reports_team_data($session['user_id']); ?>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="emergency_contact_relationship">Hubungan </label>
-                                            <select class="form-control" name="emergency_contact_relationship" data-plugin="select_hrm"
-                                                    data-placeholder="Hubungan" id="emergency_contact_relationship" autocomplete="on">
+                                            <select class="form-control" name="emergency_contact_relationship"
+                                                    data-plugin="select_hrm"
+                                                    data-placeholder="Hubungan" id="emergency_contact_relationship"
+                                                    autocomplete="on">
                                                 <option value="Mama">Mama</option>
                                                 <option value="Bapak">Bapak</option>
                                                 <option value="Kakak">Kakak</option>

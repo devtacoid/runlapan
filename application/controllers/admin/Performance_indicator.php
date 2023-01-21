@@ -69,7 +69,6 @@ class Performance_indicator extends MY_Controller {
  	
 	// get company > designations
 	 public function get_designations() {
-
 		$data['title'] = $this->Xin_model->site_title();
 		$id = $this->uri->segment(4);
 		
