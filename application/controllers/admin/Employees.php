@@ -1367,7 +1367,6 @@ class Employees extends MY_Controller
 
     public function detail()
     {
-
         $session = $this->session->userdata('username');
         if (empty($session)) {
             redirect('admin/');
