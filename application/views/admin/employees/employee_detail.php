@@ -321,7 +321,7 @@ $leave_user = $this->Xin_model->read_user_info($eid);
                                                     <?php } ?>
                                                     <div class="col-md-4">
                                                         <div class="form-group" id="designation_ajax">
-                                                            <label for="designation"><?php echo $this->lang->line('xin_designation'); ?>
+                                                            <label for="designation">Level
                                                                 <i class="hrsale-asterisk">*</i></label>
                                                             <select class="form-control" name="designation_id"
                                                                     data-plugin="select_hrm"

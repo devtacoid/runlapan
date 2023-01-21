@@ -5,7 +5,7 @@
 	<?php $result = $this->Designation_model->ajax_is_designation_information($department_id);?>
 <?php } ?>
 <div class="form-group" id="designation_ajax">
-  <label class="form-label"><?php echo $this->lang->line('xin_designation');?><i class="hrsale-asterisk">*</i></label>
+  <label class="form-label">Level <i class="hrsale-asterisk">*</i></label>
   <select class="form-control" name="designation_id" data-plugin="select_hrm" data-placeholder="<?php echo $this->lang->line('xin_designation');?>">
     <option value=""><?php echo $this->lang->line('xin_designation');?></option>
     <?php foreach($result as $designation) {?>
