@@ -2264,7 +2264,7 @@ class Employees extends MY_Controller
             $file_name = date('Ymdhis');
             $config['file_name'] = $file_name;
             $config['upload_path'] = './uploads/profile';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'gif|jpg|png|raw|jpeg';
             $config['overwrite'] = true;
             $config['max_size'] = 1024;
 
