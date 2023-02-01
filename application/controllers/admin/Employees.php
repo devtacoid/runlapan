@@ -1298,10 +1298,12 @@ class Employees extends MY_Controller
         $fname = strtolower($fname);
         $pay_month = strtolower(date("F Y"));
         //Close and output PDF document
-        ob_start();
+//        ob_start();
+        ob_clean();
+        ob_flush();
         $pdf->Output('payslip_' . $fname . '_' . $pay_month . '.pdf', 'I');
         ob_end_flush();
-
+        ob_end_clean();
     }
 
     public function employees_cards_list()
